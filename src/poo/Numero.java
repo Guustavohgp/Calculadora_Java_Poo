@@ -28,7 +28,7 @@ public class Numero {
         this.y = y;
     }
 
-// Métodos
+// Métodos de operação
     public double soma() {
         return (double) this.x + this.y;
     }

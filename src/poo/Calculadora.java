@@ -30,7 +30,7 @@ public class Calculadora {
             System.out.println("Informe o valor do segundo numero: ");
             numero.setY(sc.nextDouble());
             
-            
+
 
             if (operacaoValida(operacao)) {
                 switch (operacao) {
@@ -44,7 +44,7 @@ public class Calculadora {
                         resultado  = numero.multiplicacao();
                         break;
                     case "/":
-                        if (numero.getY() == 0) {
+                        if (numero.getX() == 0 || numero.getY() == 0) {
                             System.out.println("Divisão por 0 não é permitida");
                             return;
                     } else {

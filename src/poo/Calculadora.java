@@ -1,4 +1,5 @@
 package poo;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Calculadora {
     public static void main(String[] args) {
@@ -16,22 +17,26 @@ public class Calculadora {
             System.out.println("");
             System.out.println("\nCALCULADORA");
 
-            System.out.println("Digite um número para continuar ou 0 para finalizar");
-            finalizar = sc.nextInt();
+            try {
+                System.out.println("Digite um número para continuar ou 0 para finalizar");
+                finalizar = sc.nextInt();
+            }
+            catch (InputMismatchException e){
+                System.out.println("\nNúmero inválido, use números com vírgula");
+            }
             
+
             if (finalizar==0){
                 continuar = false;
                 return;
             }
             System.out.println("Informe o valor do primeiro numero: ");
             numero.setX(sc.nextDouble()); 
-            System.out.println("Digite o sinal da operação que deseja realizar: ");
+            System.out.println("Digite o sinal da operação que deseja realizar ( +, -, *, / ): ");
             operacao = sc.next();
             System.out.println("Informe o valor do segundo numero: ");
             numero.setY(sc.nextDouble());
-            
-            
-
+           
             if (operacaoValida(operacao)) {
                 switch (operacao) {
                     case "+":
@@ -56,7 +61,13 @@ public class Calculadora {
                 System.out.println("Operação Inválida");
                 return;
             }
-            System.out.printf("O resultado de " + numero.getX() + " " + operacao + " " + numero.getY() + " é: " +resultado);    
+    
+            if (operacao.equals ("/")){
+                System.out.printf("O resultado de " + numero.getX() + " " + operacao + " " + numero.getY() + " é: "+ String.format("%.3f", resultado)); 
+            }
+            else{
+                System.out.printf("O resultado de " + numero.getX() + " " + operacao + " " + numero.getY() + " é: "+ resultado);
+            }   
         }
             sc.close();
     }

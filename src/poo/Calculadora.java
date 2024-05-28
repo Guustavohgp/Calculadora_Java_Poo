@@ -25,7 +25,7 @@ public class Calculadora {
             }
             System.out.println("Informe o valor do primeiro numero: ");
             numero.setX(sc.nextDouble()); 
-            System.out.println("Digite o sinal da operação que deseja realizar: ");
+            System.out.println("Digite o sinal da operação que deseja realizar ( +, -, *, / ): ");
             operacao = sc.next();
             System.out.println("Informe o valor do segundo numero: ");
             numero.setY(sc.nextDouble());

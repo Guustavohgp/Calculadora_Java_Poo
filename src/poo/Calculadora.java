@@ -61,13 +61,7 @@ public class Calculadora {
                 System.out.println("Operação Inválida");
                 return;
             }
-    
-            if (operacao.equals ("/")){
-                System.out.printf("O resultado de " + numero.getX() + " " + operacao + " " + numero.getY() + " é: "+ String.format("%.3f", resultado)); 
-            }
-            else{
-                System.out.printf("O resultado de " + numero.getX() + " " + operacao + " " + numero.getY() + " é: "+ resultado);
-            }   
+            System.out.printf("O resultado de " + numero.getX() + " " + operacao + " " + numero.getY() + " é: " +resultado);    
         }
             sc.close();
     }

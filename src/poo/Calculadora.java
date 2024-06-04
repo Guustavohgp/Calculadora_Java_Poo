@@ -5,7 +5,6 @@ public class Calculadora {
     public static void main(String[] args) {
 
         Numero numero = new Numero(0, 0);
-
         boolean continuar = true;
         Scanner sc = new Scanner(System.in);
 
@@ -16,8 +15,8 @@ public class Calculadora {
         
             System.out.println("");
             System.out.println("\nCALCULADORA");
-
-
+            
+            // usando try catch para lidar com exceção de erro caso seja um número com ponto "1.0"
             try{
                 System.out.println("Digite um número para continuar ou 0 para finalizar");
                 finalizar = sc.nextInt();
@@ -27,33 +26,32 @@ public class Calculadora {
                 sc.next();  // limpar o scanner
                 continue;   // recomeçar o loop
             }
+            // lógica para finalizar o loop 
             if (finalizar==0){
                 continuar = false;
                 return;
             }
-            
             try{
                 System.out.println("Informe o valor do primeiro numero: ");
                 numero.setX(sc.nextDouble()); 
             }catch (InputMismatchException e){
                 System.out.println("Número inválido, use números com vírgula");
-                sc.next();  // limpar o scanner
-                continue;   // recomeçar o loop
+                sc.next();  
+                continue;   
             }
             System.out.println("Digite o sinal da operação que deseja realizar ( +, -, *, / ): ");
             operacao = sc.next();
-
-            
             try{
                 System.out.println("Informe o valor do segundo numero: ");
             numero.setY(sc.nextDouble());
             }catch(InputMismatchException e){
                 System.out.println("Número inválido, use números com vírgula");
-                sc.next();  // limpar o scanner
-                continue;   // recomeçar o loop
+                sc.next();  
+                continue;   
             }
-            sc.close();
+            sc.close(); // finalizando scanner
 
+            // conferindo se a operação é válida
             if (operacaoValida(operacao)) {
                 switch (operacao) {
                     case "+":
@@ -87,7 +85,7 @@ public class Calculadora {
             }   
         }
     }
-
+    // criando operações válidas
     public static boolean operacaoValida(String operacao) {
         return operacao.equals("+") || operacao.equals("-") || operacao.equals("*") || operacao.equals("/");
     }

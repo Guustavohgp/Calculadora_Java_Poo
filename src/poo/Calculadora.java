@@ -1,4 +1,5 @@
 package poo;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Calculadora {
     public static void main(String[] args) {
@@ -16,20 +17,41 @@ public class Calculadora {
             System.out.println("");
             System.out.println("\nCALCULADORA");
 
-            System.out.println("Digite um número para continuar ou 0 para finalizar");
-            finalizar = sc.nextInt();
-            
+
+            try{
+                System.out.println("Digite um número para continuar ou 0 para finalizar");
+                finalizar = sc.nextInt();
+            } 
+            catch (InputMismatchException e) {
+                System.out.println("Número inválido, use números com vírgula");
+                sc.next();  // limpar o scanner
+                continue;   // recomeçar o loop
+            }
             if (finalizar==0){
                 continuar = false;
                 return;
             }
-            System.out.println("Informe o valor do primeiro numero: ");
-            numero.setX(sc.nextDouble()); 
+            
+            try{
+                System.out.println("Informe o valor do primeiro numero: ");
+                numero.setX(sc.nextDouble()); 
+            }catch (InputMismatchException e){
+                System.out.println("Número inválido, use números com vírgula");
+                sc.next();  // limpar o scanner
+                continue;   // recomeçar o loop
+            }
             System.out.println("Digite o sinal da operação que deseja realizar ( +, -, *, / ): ");
             operacao = sc.next();
-            System.out.println("Informe o valor do segundo numero: ");
-            numero.setY(sc.nextDouble());
+
             
+            try{
+                System.out.println("Informe o valor do segundo numero: ");
+            numero.setY(sc.nextDouble());
+            }catch(InputMismatchException e){
+                System.out.println("Número inválido, use números com vírgula");
+                sc.next();  // limpar o scanner
+                continue;   // recomeçar o loop
+            }
 
 
             if (operacaoValida(operacao)) {

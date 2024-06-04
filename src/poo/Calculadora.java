@@ -52,7 +52,7 @@ public class Calculadora {
                 sc.next();  // limpar o scanner
                 continue;   // recomeçar o loop
             }
-
+            sc.close();
 
             if (operacaoValida(operacao)) {
                 switch (operacao) {
@@ -86,7 +86,6 @@ public class Calculadora {
                 System.out.printf("O resultado de " + numero.getX() + " " + operacao + " " + numero.getY() + " é: "+ resultado);
             }   
         }
-            sc.close();
     }
 
     public static boolean operacaoValida(String operacao) {

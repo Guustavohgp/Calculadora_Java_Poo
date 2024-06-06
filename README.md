@@ -6,13 +6,13 @@ Este é um projeto de uma calculadora simples em Java, que realiza operações b
 
 - **Operações suportadas:** Adição (+), Subtração (-), Multiplicação (*) e Divisão (/).
 - **Validação de operações:** A calculadora valida as operações de entrada para garantir que apenas operações suportadas sejam realizadas.
-- **Lida com erros:** A calculadora evita que o programa se encerre caso algum erro de leitura de variável aconteça, operação inexistente e números fora do padrão.
-- **Não permite divisão com 0** Caso algum dos números dentro da operação de divisão (/) for 0, retornará que é inválido.
+- **Lida com erros:** A calculadora evita que o programa se encerre caso algum erro de leitura de variável aconteça, operações inexistentes e números fora do padrão.
+- **Não permite divisão com 0:** Caso algum dos números dentro da operação de divisão (/) for 0, retornará que é inválido.
 ## Requisitos
 
 - **Java:** Certifique-se de ter o **JDK** (Java Development Kit) instalado em sua máquina. O projeto foi desenvolvido usando Java 17.
 ### Com IDE e git hub
--  Tenha uma ide instalado que execute java como **VSCode** conecte ao github e faça download das extenções java.
+-  É necessário ter uma Ambiente Integrado de Desenvolvimento (IDE) instalada que suporte a linguagem de programação Java como o **VSCode**, faça download das extenções java. Conecte ao github
 ### Com Git:
 - **GitBash:** Utilize o **GitBash** para clonar e executar o projeto.
 ## Como usar com GitBash
@@ -40,18 +40,13 @@ Este é um projeto de uma calculadora simples em Java, que realiza operações b
     ```bash
     javac src/poo/*.java
     ```
-5. Compilar os aquivos.java:
-
-    ```bash
-    javac src/poo/*.java
-    ```
-6. Executar a classe principal:
+5. Executar a classe principal:
 
     ```bash
     java -cp src poo.Calculadora
     ```
 
-7. Siga as instruções na linha de comando para realizar um cálculo. Você será solicitado a inserir dois números e o operador desejado.
+6. Siga as instruções na linha de comando para realizar um cálculo. Você será solicitado a inserir dois números e o operador desejado.
 
 ## Como usar com VSCode
 1. Abra o VSCode

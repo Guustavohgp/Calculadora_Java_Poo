@@ -60,7 +60,7 @@ public class Calculadora {
                     case "/":
                         if (numero.getY() == 0) {
                             System.out.println("Divisão por 0 não é permitida");
-                            return;
+                            continue;
                     } else {
                             resultado = numero.divisao();      
                     }

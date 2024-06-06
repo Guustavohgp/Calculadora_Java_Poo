@@ -20,6 +20,7 @@ public class Calculadora {
 
             if (input.length() != 1) {
                 System.out.println("\nUse s ou n");
+                sc.nextLine();
                 continue;
             }
             caracter = input.charAt(0);
@@ -42,7 +43,7 @@ public class Calculadora {
             }
             catch(InputMismatchException e){
                 System.out.println("Número inválido, use números com vírgula");
-                sc.nextLine(); // Limpa a entrada inválida
+                sc.next(); // Limpa a entrada inválida
                 continue;
             }
             if (operacaoValida(operacao)) {

@@ -31,14 +31,20 @@ public class Calculadora {
                 System.out.println("Valor inválido, digite s ou n");
                 continue;
             }
-            
+            try{
             System.out.println("Informe o valor do primeiro numero: ");
             numero.setX(sc.nextDouble()); 
             System.out.println("Digite o sinal da operação que deseja realizar ( +, -, *, / ): ");
             operacao = sc.next();
             System.out.println("Informe o valor do segundo numero: ");
             numero.setY(sc.nextDouble());
-           
+            sc.nextLine();  // Consumir o caractere de nova linha deixado por nextDouble()
+            }
+            catch(InputMismatchException e){
+                System.out.println("Número inválido, use números com vírgula");
+                sc.nextLine(); // Limpa a entrada inválida
+                continue;
+            }
             if (operacaoValida(operacao)) {
                 switch (operacao) {
                     case "+":

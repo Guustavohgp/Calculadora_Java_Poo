@@ -6,7 +6,7 @@ Este é um projeto de uma calculadora simples em Java, que realiza operações b
 
 - **Operações suportadas:** Adição (+), Subtração (-), Multiplicação (*) e Divisão (/).
 - **Validação de operações:** A calculadora valida as operações de entrada para garantir que apenas operações suportadas sejam realizadas.
-- **Lida com erros:** A calculadora evita que o programa se encerre caso algum erro de leitura de variável aconteça.
+- **Lida com erros:** A calculadora evita que o programa se encerre caso algum erro de leitura de variável aconteça, operação inexistente e números fora do padrão.
 - **Não permite divisão com 0** Caso algum dos números dentro da operação de divisão (/) for 0, retornará que é inválido.
 ## Requisitos
 

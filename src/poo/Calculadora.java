@@ -5,31 +5,33 @@ public class Calculadora {
     public static void main(String[] args) {
 
         Numero numero = new Numero(0, 0);
-
         boolean continuar = true;
         Scanner sc = new Scanner(System.in);
 
         while(continuar) {
             String operacao;
-            int finalizar = 1;
+            char caracter;
             double resultado = 0;
         
             System.out.println("");
             System.out.println("\nCALCULADORA");
+            System.out.println("Deseja Continuar? s/n");
+            String input = sc.nextLine();
 
-            try {
-                System.out.println("Digite um número para continuar ou 0 para finalizar");
-                finalizar = sc.nextInt();
+            if (input.length() != 1) {
+                System.out.println("\nUse s ou n");
+                continue;
             }
-            catch (InputMismatchException e){
-                System.out.println("\nNúmero inválido, use números com vírgula");
+            caracter = input.charAt(0);
+            if (caracter == 'n') {
+                continuar = false;
+                continue;
+            }
+            if (caracter != 'n' && caracter != 's') {
+                System.out.println("Valor inválido, digite s ou n");
+                continue;
             }
             
-
-            if (finalizar==0){
-                continuar = false;
-                return;
-            }
             System.out.println("Informe o valor do primeiro numero: ");
             numero.setX(sc.nextDouble()); 
             System.out.println("Digite o sinal da operação que deseja realizar ( +, -, *, / ): ");
@@ -59,7 +61,7 @@ public class Calculadora {
                 }
             } else {
                 System.out.println("Operação Inválida");
-                return;
+                continue;
             }
             System.out.printf("O resultado de " + numero.getX() + " " + operacao + " " + numero.getY() + " é: " +resultado);    
         }

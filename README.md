@@ -1,10 +1,10 @@
 # Calculadora Simples em Java 
 
-Este é um projeto de uma calculadora simples em Java, que realiza operações básicas entre dois números como adição, subtração, multiplicação e divisão, usando conceitos de orientação a objetos e tratamento de exceções.
+Este é um projeto de uma calculadora simples em Java, que realiza operações básicas entre dois números como adição, subtração, multiplicação, divisão e exponenciação, usando conceitos de orientação a objetos e tratamento de exceções.
 
 ## Funcionalidades
 
-- **Operações suportadas:** Adição (+), Subtração (-), Multiplicação (*) e Divisão (/).
+- **Operações suportadas:** Adição (+), Subtração (-), Multiplicação (*), Divisão (/) e Exponenciação (^).
 - **Validação de operações:** A calculadora valida as operações de entrada para garantir que apenas operações suportadas sejam realizadas.
 - **Lida com erros:** A calculadora evita que o programa se encerre caso algum erro de leitura de variável aconteça, operações inexistentes e números fora do padrão.
 - **Não permite divisão com 0:** Caso algum dos números dentro da operação de divisão (/) for 0, retornará que é inválido.

@@ -35,7 +35,7 @@ public class Calculadora {
             try{
             System.out.println("Informe o valor do primeiro numero: ");
             numero.setX(sc.nextDouble()); 
-            System.out.println("Digite o sinal da operação que deseja realizar ( +, -, *, / ): ");
+            System.out.println("Digite o sinal da operação que deseja realizar ( +, -, *, /, ^ ): ");
             operacao = sc.next();
             System.out.println("Informe o valor do segundo numero: ");
             numero.setY(sc.nextDouble());
@@ -57,6 +57,9 @@ public class Calculadora {
                     case "*":
                         resultado  = numero.multiplicacao();
                         break;
+                    case "^":
+                        resultado  = numero.potencia();
+                        break;
                     case "/":
                         if (numero.getX() == 0 || numero.getY() ==0) {
                             System.out.println("Divisão por 0 não é permitida");
@@ -76,6 +79,6 @@ public class Calculadora {
     }
 
     public static boolean operacaoValida(String operacao) {
-        return operacao.equals("+") || operacao.equals("-") || operacao.equals("*") || operacao.equals("/");
+        return operacao.equals("+") || operacao.equals("-") || operacao.equals("*") || operacao.equals("^") || operacao.equals("/");
     }
 }

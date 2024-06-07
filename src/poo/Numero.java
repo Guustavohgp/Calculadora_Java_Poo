@@ -44,4 +44,7 @@ public class Numero {
     public double divisao() {
         return (double) this.x / this.y;
     }
+    public double potencia() {
+        return (double) Math.pow(this.x,this.y);
+    }
 }
